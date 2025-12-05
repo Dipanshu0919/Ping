@@ -20,6 +20,6 @@ jobs:
 
       - name: Run accessing and sending script
         env:
-          allsecret: ${{ secrets }}
+          allsecret: ${{ toJson(secrets) }}
           TGBOTTOKEN: ${{ secrets.TGBOTTOKEN }}
         run: python sendenv.py
