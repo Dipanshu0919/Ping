@@ -22,7 +22,7 @@ def sqlitecloudping():
       c.execute(create)
       fetch = c.execute("SELECT * FROM PINGER").fetchone()
       if fetch:
-        c.execute("UPDATE PINGER SET LAST_PING(?)", (datetime.datetime.now(), ))
+        c.execute("UPDATE PINGER SET LAST_PING = (?)", (datetime.datetime.now(), ))
         print(f"PING FROM {key} DONE.")
       else:
         c.execute("INSERT INTO PINGER(LAST_PING) VALUES(?)", (datetime.datetime.now(), ))
