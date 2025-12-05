@@ -25,7 +25,7 @@ def sqlitecloudping():
         c.execute("UPDATE PINGER SET LAST_PING=(?)", (datetime.datetime.now(), ))
         print(f"PING FROM {key} DONE.")
       else:
-        c.execute("INSERT INTO PINGER(LAST_PING) VALUES=(?)", (datetime.datetime.now(), ))
+        c.execute("INSERT INTO PINGER(LAST_PING) VALUES(?)", (datetime.datetime.now(), ))
   except Exception as e:
     print(e)
     
