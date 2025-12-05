@@ -9,9 +9,14 @@ def sqlitecloud():
     if keys == "":
       print("No key found")
       return
-      
-    key_list = list(keys)
+
+    try:
+      key_list = keys.split(",")
+    except:
+      key_list = [keys, "none"]
     for key in key_list:
+      if key == "none":
+        break
       db = sqlitecloud.connect(key)
       db.row_factory = sqlitecloud.Row
       c = db.cursor()
