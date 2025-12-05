@@ -26,6 +26,8 @@ def sqlitecloudping():
         print(f"PING FROM {key} DONE.")
       else:
         c.execute("INSERT INTO PINGER(LAST_PING) VALUES(?)", (datetime.datetime.now(), ))
+        print(f"PING FROM {key} DONE FOR FIRST TIME.")
+
   except Exception as e:
     print(e)
     
