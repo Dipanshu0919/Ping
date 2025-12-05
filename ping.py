@@ -13,10 +13,8 @@ def sqlitecloudping():
     try:
       key_list = keys.split(",")
     except:
-      key_list = [keys, "none"]
+      key_list = [keys]
     for key in key_list:
-      if key == "none":
-        break
       db = sqlitecloud.connect(key)
       db.row_factory = sqlitecloud.Row
       c = db.cursor()
