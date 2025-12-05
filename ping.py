@@ -3,7 +3,7 @@ import os, requests, json, sqlitecloud, datetime
 allsecrets = os.environ.get("ALL_SECRETS")
 allsecrets = json.loads(allsecrets)
 
-def sqlitecloud():
+def sqlitecloudping():
   try:
     keys = allsecrets.get("SQLITECLOUD", "")
     if keys == "":
@@ -32,4 +32,4 @@ def sqlitecloud():
     print(e)
     
 if __name__ == "__main__":
-  sqlitecloud()
+  sqlitecloudping()
